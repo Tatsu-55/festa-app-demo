@@ -49,7 +49,7 @@ const buttonStyles = css`
 
 const IdolCheck = ({ id, name, image }) => {
   const { currentUser } = useCurrentUser()
-  console.log(currentUser)
+  
 
   const router = useRouter();
 
@@ -58,6 +58,7 @@ const IdolCheck = ({ id, name, image }) => {
   useEffect(() => {
     // ユーザーのFirebase Auth IDを取得
     const userId = currentUser.uid;
+    console.log(userId);  
 
     // ユーザーの投票履歴をFirebaseから取得
     const fetchVoteStatus = async () => {
@@ -65,9 +66,12 @@ const IdolCheck = ({ id, name, image }) => {
 
       // 今日の日付を取得
       // 現在の日本時間を取得する
-    const japanTime = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
-    const japanDate = new Date(japanTime);
-    const today = japanDate.toISOString().split('T')[0];
+      const japanStandardTime = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' });
+      const year = new Date(japanStandardTime).getFullYear();
+      const month = new Date(japanStandardTime).getMonth() + 1;
+      const date = new Date(japanStandardTime).getDate();
+      const today = `${year}/${month}/${date}`;
+      console.log(today)
 
       if (lastRunDate === today) {
         setHasVotedToday(true);
@@ -83,14 +87,12 @@ const IdolCheck = ({ id, name, image }) => {
   const handleVoteClick = async () => {
     // ユーザーの投票履歴を更新
     const userId = currentUser.uid;
-    //const today = new Date().toISOString().split('T')[0];
-
-    // 現在の日本時間を取得する
-    const japanTime = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
-    const japanDate = new Date(japanTime);
-
-    // 年月日の部分だけ取得（ISO 8601形式の文字列）
-    const today = japanDate.toISOString().split('T')[0];
+    
+    const japanStandardTime = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' });
+    const year = new Date(japanStandardTime).getFullYear();
+    const month = new Date(japanStandardTime).getMonth() + 1;
+    const date = new Date(japanStandardTime).getDate();
+    const today = `${year}/${month}/${date}`;
 
     await setLastRunDate(userId, today);
 
