@@ -27,7 +27,7 @@ const AppInit = () => {
               // eslint-disable-next-line no-console
             })
             .catch(() => {
-               console.log(error)
+               //console.log(error)
             })
         } else {
           setCurrentUser({

@@ -33,6 +33,7 @@ const descriptionStyles = css`
 `;
 
 const About = () => {
+
   const steps = [
     {
       subheading: 'Step 1:Metamask（Wallet）をインストールしよう！',
