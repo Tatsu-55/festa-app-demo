@@ -61,8 +61,7 @@ const FV = () => {
       <h1 css={headingStyles}>未来への歓声、AIアイドル投票アプリが贈る<br></br>新時代エンターテイメント！</h1>
       <Button />
       <p css={css`margin: 5px 0`}>Metamaskをまだインストールされていない方はこちらから</p>
-      <ConnectWallet css={buttonStyles}/>
-  
+      <ConnectWallet css={buttonStyles}/>  
     </section>
     </>
   );
