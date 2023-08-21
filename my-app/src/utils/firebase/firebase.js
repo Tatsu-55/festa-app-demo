@@ -6,6 +6,7 @@ import { getAuth } from 'firebase/auth';
 import { getApp, getApps } from 'firebase/app';
 
 export const firebaseConfig = {
+  
   apiKey: "AIzaSyCK-UiRmNhj2umU9VmaUREV2hkPUGh13dI",
   authDomain: "festa-app-voting-system.firebaseapp.com",
   projectId: "festa-app-voting-system",
