@@ -49,6 +49,7 @@ const buttonStyles = css`
 
 const IdolCheck = ({ id, name, image }) => {
   const { currentUser } = useCurrentUser()
+  console.log(currentUser)
 
   const router = useRouter();
 
@@ -63,7 +64,10 @@ const IdolCheck = ({ id, name, image }) => {
       const lastRunDate = await getLastRunDate(userId);
 
       // 今日の日付を取得
-      const today = new Date().toISOString().split('T')[0];
+      // 現在の日本時間を取得する
+    const japanTime = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
+    const japanDate = new Date(japanTime);
+    const today = japanDate.toISOString().split('T')[0];
 
       if (lastRunDate === today) {
         setHasVotedToday(true);
@@ -74,12 +78,20 @@ const IdolCheck = ({ id, name, image }) => {
 
     fetchVoteStatus();
   }, []);
-
+  
 
   const handleVoteClick = async () => {
     // ユーザーの投票履歴を更新
     const userId = currentUser.uid;
-    const today = new Date().toISOString().split('T')[0];
+    //const today = new Date().toISOString().split('T')[0];
+
+    // 現在の日本時間を取得する
+    const japanTime = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
+    const japanDate = new Date(japanTime);
+
+    // 年月日の部分だけ取得（ISO 8601形式の文字列）
+    const today = japanDate.toISOString().split('T')[0];
+
     await setLastRunDate(userId, today);
 
     // 投票後の処理

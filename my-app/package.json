@@ -16,6 +16,7 @@
     "@thirdweb-dev/auth": "^3.2.34",
     "@thirdweb-dev/react": "^3.14.34",
     "@thirdweb-dev/sdk": "^3.10.53",
+    "dotenv": "^16.3.1",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
     "ethers": "5",
