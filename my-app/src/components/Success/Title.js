@@ -17,7 +17,7 @@ const descriptionStyle = css`
 const Title = () => (
   <div>
     <h1 css={titleStyle}>投票完了！</h1>
-    <p css={descriptionStyle}>投票が成功しました！アイドルに投票してくれてありがとうございます！<br></br>マイページで投票したアイドルのNFTをチェックしてみましょう。</p>
+    <p css={descriptionStyle}>投票が成功しました！アイドルに投票してくれてありがとうございます！<br></br>マイページで投票したアイドルのNFTをチェックしてみましょう。<br></br>アプリ改善のため、アンケートにもご回答いただけると幸いです。</p>
   </div>
 )
 

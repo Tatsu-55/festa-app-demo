@@ -32,6 +32,7 @@ const Button = () => (
   <div css={buttonContainer}>
     <Link href="/" css={buttonStyle}>Home</Link>
     <Link href="/mypage" css={buttonStyle}>Mypage</Link>
+    <Link href="https://forms.gle/Yr9A7QnMtnFoyVNn8" css={buttonStyle} target='_brank'>アンケート</Link>
   </div>
 )
 
