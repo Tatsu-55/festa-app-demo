@@ -3,6 +3,7 @@ import VoteList from "@/components/Vote/VoteList";
 import idolData from "@/data/IdolData";
 
   const Vote = () => {
+   
     return (
       <>
         <Explain />

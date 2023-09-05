@@ -5,7 +5,6 @@ import IdolCheck from './IdolCheck';
 
 const Check = () => {
 
-  console.log(process.env.API_KEY)
   const router = useRouter();
   const { id } = router.query; // ダイナミックルーティングで渡されるidを取得
 
