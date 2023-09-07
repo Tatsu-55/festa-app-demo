@@ -55,8 +55,10 @@ function MyApp(props) {
   return (
     <>
       <Head>
-        <title>Idol NFT</title>
-        <link rel="icon" type="image/png" sizes="32x32" href="/ファビコン.png" />
+        <title>Miss AI</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="/Miss_AIロゴ.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/Miss_AIロゴ.png" />
+        <link rel="icon" type="image/png" sizes="64x64" href="/Miss_AIロゴ.png" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThirdwebProvider 
